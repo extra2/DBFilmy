@@ -38,6 +38,7 @@
             this.Penalty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Copies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modify = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Rent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteRow = new System.Windows.Forms.DataGridViewButtonColumn();
             this.labelCrit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             // 
             // dataGridViewMovies
             // 
-            this.dataGridViewMovies.AllowUserToAddRows = false;
             this.dataGridViewMovies.AllowUserToDeleteRows = false;
             this.dataGridViewMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMovies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -65,12 +65,14 @@
             this.Penalty,
             this.Copies,
             this.Modify,
+            this.Rent,
             this.DeleteRow});
-            this.dataGridViewMovies.Location = new System.Drawing.Point(206, 0);
+            this.dataGridViewMovies.Location = new System.Drawing.Point(140, 0);
             this.dataGridViewMovies.Name = "dataGridViewMovies";
             this.dataGridViewMovies.ShowEditingIcon = false;
-            this.dataGridViewMovies.Size = new System.Drawing.Size(964, 291);
+            this.dataGridViewMovies.Size = new System.Drawing.Size(1028, 415);
             this.dataGridViewMovies.TabIndex = 0;
+            this.dataGridViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMovies_CellContentClick);
             // 
             // Title
             // 
@@ -119,6 +121,12 @@
             this.Modify.Text = "Modyfikuj";
             this.Modify.Width = 60;
             // 
+            // Rent
+            // 
+            this.Rent.HeaderText = "Wypożycz";
+            this.Rent.Name = "Rent";
+            this.Rent.Width = 60;
+            // 
             // DeleteRow
             // 
             this.DeleteRow.HeaderText = "Usuń";
@@ -165,21 +173,21 @@
             // 
             this.textBoxTitle.Location = new System.Drawing.Point(0, 35);
             this.textBoxTitle.Name = "textBoxTitle";
-            this.textBoxTitle.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTitle.Size = new System.Drawing.Size(134, 20);
             this.textBoxTitle.TabIndex = 7;
             // 
             // textBoxDirector
             // 
             this.textBoxDirector.Location = new System.Drawing.Point(0, 81);
             this.textBoxDirector.Name = "textBoxDirector";
-            this.textBoxDirector.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDirector.Size = new System.Drawing.Size(134, 20);
             this.textBoxDirector.TabIndex = 8;
             // 
             // buttonRefresh
             // 
             this.buttonRefresh.Location = new System.Drawing.Point(-5, 153);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(75, 23);
+            this.buttonRefresh.Size = new System.Drawing.Size(139, 23);
             this.buttonRefresh.TabIndex = 12;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = true;
@@ -189,14 +197,14 @@
             // 
             this.textBoxCategory.Location = new System.Drawing.Point(0, 127);
             this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCategory.Size = new System.Drawing.Size(134, 20);
             this.textBoxCategory.TabIndex = 10;
             // 
             // MoviesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1172, 519);
+            this.ClientSize = new System.Drawing.Size(1172, 417);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.textBoxDirector);
@@ -217,6 +225,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewMovies;
+        private System.Windows.Forms.Label labelCrit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxTitle;
+        private System.Windows.Forms.TextBox textBoxDirector;
+        private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Director;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReleaseDate;
@@ -226,14 +242,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Penalty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
         private System.Windows.Forms.DataGridViewButtonColumn Modify;
+        private System.Windows.Forms.DataGridViewButtonColumn Rent;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteRow;
-        private System.Windows.Forms.Label labelCrit;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxTitle;
-        private System.Windows.Forms.TextBox textBoxDirector;
-        private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.TextBox textBoxCategory;
     }
 }

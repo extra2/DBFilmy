@@ -13,7 +13,7 @@ namespace DBFilmy.Forms
     public partial class MoviesList : Form
     {
         private readonly ILogger _logger;
-
+        private List<Movie> movieList = new List<Movie>();
         public MoviesList(ILogger logger)
         {
             _logger = logger;
@@ -22,7 +22,19 @@ namespace DBFilmy.Forms
 
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
-            new RefreshMovieList(dataGridViewMovies, textBoxTitle.Text, textBoxDirector.Text, textBoxCategory.Text).Refresh();
+            movieList = new RefreshMovieList(dataGridViewMovies, textBoxTitle.Text, textBoxDirector.Text, textBoxCategory.Text, ref movieList).Refresh();
+        }
+
+        private void dataGridViewMovies_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView) sender;
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn && e.RowIndex >= 0)
+            {
+                int rowIndex = e.RowIndex;
+                if (e.ColumnIndex == 8) new ModifyMovie(movieList, dataGridViewMovies.Rows[rowIndex], rowIndex).ChangeData();
+                //if (e.ColumnIndex == 9) wypozycz();
+                if (e.ColumnIndex == 10) new RemoveMovie(movieList, dataGridViewMovies.Rows[rowIndex], rowIndex).ChangeData();
+            }
         }
     }
 }
