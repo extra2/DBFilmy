@@ -7,7 +7,7 @@
       <Diagram DiagramId="0fe85e5916ae4847957e0e046e53737e" Name="Diagram1">
         <EntityTypeShape EntityType="filmyModel.Client" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="filmyModel.Movie_Instance" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="filmyModel.Transactions" Width="1.5" PointX="7.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="filmyModel.Transactions" Width="1.75" PointX="6" PointY="2.625" IsExpanded="true" />
         <AssociationConnector Association="filmyModel.FK_ID_Clients" ManuallyRouted="false" />
         <AssociationConnector Association="filmyModel.FK_ID_Movie_Instance" ManuallyRouted="false" />
         <EntityTypeShape EntityType="filmyModel.Movie" Width="1.5" PointX="0.75" PointY="0.875" />

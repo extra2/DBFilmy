@@ -57,7 +57,7 @@
             // 
             // buttonListOfMovies
             // 
-            this.buttonListOfMovies.Location = new System.Drawing.Point(243, 13);
+            this.buttonListOfMovies.Location = new System.Drawing.Point(15, 72);
             this.buttonListOfMovies.Name = "buttonListOfMovies";
             this.buttonListOfMovies.Size = new System.Drawing.Size(134, 23);
             this.buttonListOfMovies.TabIndex = 2;
