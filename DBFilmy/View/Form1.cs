@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DBFilmy.Forms;
+using DBFilmy.View;
 
 namespace DBFilmy
 {
@@ -31,6 +32,20 @@ namespace DBFilmy
         private void buttonListOfMovies_Click(object sender, EventArgs e)
         {
             new MoviesList(new MessageBoxLogger()).Show();
+        }
+        private void buttonRent_Click(object sender, EventArgs e)
+        {
+            new RentForm(new MessageBoxLogger()).Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new ReturnMovie(new MessageBoxLogger()).Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new ClientTransactions().Show();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace DBFilmy.Forms
@@ -19,6 +20,19 @@ namespace DBFilmy.Forms
 
         public void ChangeData()
         {
+            try
+            {
+                DateTime.Parse(_rowData.Cells["ReleaseDate"].Value.ToString());
+                Int32.Parse(_rowData.Cells["Price"].Value.ToString());
+                Int32.Parse(_rowData.Cells["Penalty"].Value.ToString());
+                Int32.Parse(_rowData.Cells["YearLimitation"].Value.ToString());
+            }
+            catch (Exception e)
+            {
+                Thread showErrorMessage = new Thread(() => MessageBox.Show("Nie można przekonwertować wprowadzonych warotści. Proszę sprawdzić ich poprawność.", "Parsing error"));
+                showErrorMessage.Start();
+                return;
+            }
             using (filmyEntities entities = new filmyEntities())
             {
                 var movie = entities.Movie.Find(_movieList[_indexOfRow].ID_Movie);

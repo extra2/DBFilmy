@@ -11,6 +11,7 @@ namespace DBFilmy
     class AddMovie
     {
         private readonly ILogger _logger;
+        private List<int> InstanceIDs = new List<int>();
         public AddMovie(string title, string director, string category, int price, int penalty, int numOfCopies, int yearLimitation, DateTime releaseTime)
         {
             Movie movie = new Movie();
@@ -22,7 +23,7 @@ namespace DBFilmy
             movie.Year_Limitation = yearLimitation;
             movie.Relase_Date = releaseTime;
             int ID;
-            new Thread(()=> MessageBox.Show("Film jest dodawany do bazy danych")).Start();
+            
             using (filmyEntities f = new filmyEntities())
             {
                 if (f.Movie.FirstOrDefault(c => c.Title == title && c.Director == director && c.Relase_Date == releaseTime) != null)
@@ -34,7 +35,7 @@ namespace DBFilmy
                 f.SaveChanges();
                 ID = movie.ID_Movie;
             }
-          
+            
             for (int i = 0; i < numOfCopies; i++)// dodaję egzemplaże
             {
                 using (filmyEntities f = new filmyEntities())
@@ -44,9 +45,17 @@ namespace DBFilmy
                     instance.Is_Rented = false;
                     f.Movie_Instance.Add(instance);
                     f.SaveChanges();
+                    InstanceIDs.Add(instance.ID_Movie_Instance);
                 }
             }
-            _logger.LogMessage("Film został dodany!");
+            string instancesToPrint = "";
+            foreach (var instance in InstanceIDs)
+            {
+                instancesToPrint += instance + ",";
+            }
+            Thread movieAdded = new Thread(() => MessageBox.Show("Film został dodany do bazy danych\nID filmu: " + ID.ToString() + 
+                "\nID kopii filmu: " + instancesToPrint.Substring(0,instancesToPrint.Length-1)));
+            movieAdded.Start();
         }
     }
 }

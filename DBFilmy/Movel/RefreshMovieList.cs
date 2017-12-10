@@ -37,6 +37,7 @@ namespace DBFilmy.Forms
             foreach (var movie in _movieList)
             {
                 DataGridViewRow r = _movies.Rows[_movies.Rows.Add()];//new DataGridViewRow();
+                r.Cells["ID"].Value = movie.ID_Movie;
                 r.Cells["Title"].Value = movie.Title;
                 r.Cells["Director"].Value = movie.Director;
                 r.Cells["ReleaseDate"].Value = movie.Relase_Date;

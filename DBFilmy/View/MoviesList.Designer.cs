@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridViewMovies = new System.Windows.Forms.DataGridView();
+            this.labelCrit = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxTitle = new System.Windows.Forms.TextBox();
+            this.textBoxDirector = new System.Windows.Forms.TextBox();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Director = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReleaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,24 +47,17 @@
             this.Penalty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Copies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modify = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Rent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.DeleteRow = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.labelCrit = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxTitle = new System.Windows.Forms.TextBox();
-            this.textBoxDirector = new System.Windows.Forms.TextBox();
-            this.buttonRefresh = new System.Windows.Forms.Button();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMovies)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewMovies
             // 
+            this.dataGridViewMovies.AllowUserToAddRows = false;
             this.dataGridViewMovies.AllowUserToDeleteRows = false;
             this.dataGridViewMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMovies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.Title,
             this.Director,
             this.ReleaseDate,
@@ -65,7 +67,6 @@
             this.Penalty,
             this.Copies,
             this.Modify,
-            this.Rent,
             this.DeleteRow});
             this.dataGridViewMovies.Location = new System.Drawing.Point(140, 0);
             this.dataGridViewMovies.Name = "dataGridViewMovies";
@@ -73,65 +74,6 @@
             this.dataGridViewMovies.Size = new System.Drawing.Size(1028, 415);
             this.dataGridViewMovies.TabIndex = 0;
             this.dataGridViewMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMovies_CellContentClick);
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Tytuł";
-            this.Title.Name = "Title";
-            // 
-            // Director
-            // 
-            this.Director.HeaderText = "Reżyser";
-            this.Director.Name = "Director";
-            // 
-            // ReleaseDate
-            // 
-            this.ReleaseDate.HeaderText = "Data premiery";
-            this.ReleaseDate.Name = "ReleaseDate";
-            // 
-            // YearLimitation
-            // 
-            this.YearLimitation.HeaderText = "Klasyfikacja Wiekowa";
-            this.YearLimitation.Name = "YearLimitation";
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Kategoria";
-            this.Category.Name = "Category";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Cena";
-            this.Price.Name = "Price";
-            // 
-            // Penalty
-            // 
-            this.Penalty.HeaderText = "Kara za przetrzymanie";
-            this.Penalty.Name = "Penalty";
-            // 
-            // Copies
-            // 
-            this.Copies.HeaderText = "Dostępność [szt]";
-            this.Copies.Name = "Copies";
-            // 
-            // Modify
-            // 
-            this.Modify.HeaderText = "Modyfikuj";
-            this.Modify.Name = "Modify";
-            this.Modify.Text = "Modyfikuj";
-            this.Modify.Width = 60;
-            // 
-            // Rent
-            // 
-            this.Rent.HeaderText = "Wypożycz";
-            this.Rent.Name = "Rent";
-            this.Rent.Width = 60;
-            // 
-            // DeleteRow
-            // 
-            this.DeleteRow.HeaderText = "Usuń";
-            this.DeleteRow.Name = "DeleteRow";
-            this.DeleteRow.Width = 60;
             // 
             // labelCrit
             // 
@@ -200,6 +142,66 @@
             this.textBoxCategory.Size = new System.Drawing.Size(134, 20);
             this.textBoxCategory.TabIndex = 10;
             // 
+            // ID
+            // 
+            this.ID.FillWeight = 65F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 65;
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Tytuł";
+            this.Title.Name = "Title";
+            // 
+            // Director
+            // 
+            this.Director.HeaderText = "Reżyser";
+            this.Director.Name = "Director";
+            // 
+            // ReleaseDate
+            // 
+            this.ReleaseDate.HeaderText = "Data premiery";
+            this.ReleaseDate.Name = "ReleaseDate";
+            // 
+            // YearLimitation
+            // 
+            this.YearLimitation.HeaderText = "Klasyfikacja Wiekowa";
+            this.YearLimitation.Name = "YearLimitation";
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Kategoria";
+            this.Category.Name = "Category";
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Cena";
+            this.Price.Name = "Price";
+            // 
+            // Penalty
+            // 
+            this.Penalty.HeaderText = "Kara za przetrzymanie";
+            this.Penalty.Name = "Penalty";
+            // 
+            // Copies
+            // 
+            this.Copies.HeaderText = "Dostępność [szt]";
+            this.Copies.Name = "Copies";
+            // 
+            // Modify
+            // 
+            this.Modify.HeaderText = "Modyfikuj";
+            this.Modify.Name = "Modify";
+            this.Modify.Text = "Modyfikuj";
+            this.Modify.Width = 60;
+            // 
+            // DeleteRow
+            // 
+            this.DeleteRow.HeaderText = "Usuń";
+            this.DeleteRow.Name = "DeleteRow";
+            this.DeleteRow.Width = 60;
+            // 
             // MoviesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +235,7 @@
         private System.Windows.Forms.TextBox textBoxDirector;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.TextBox textBoxCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Director;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReleaseDate;
@@ -242,7 +245,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Penalty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Copies;
         private System.Windows.Forms.DataGridViewButtonColumn Modify;
-        private System.Windows.Forms.DataGridViewButtonColumn Rent;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteRow;
     }
 }

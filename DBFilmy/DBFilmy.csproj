@@ -63,12 +63,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Movel\CalculateBill.cs" />
     <Compile Include="Movel\AddMovie.cs" />
     <Compile Include="Movel\FileLogger.cs" />
     <Compile Include="Filmy.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Filmy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Movel\Rent.cs" />
+    <Compile Include="View\ReturnMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReturnMovie.Designer.cs">
+      <DependentUpon>ReturnMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movel\ReturnMovieToDb.cs" />
+    <Compile Include="View\ClientTransactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ClientTransactions.Designer.cs">
+      <DependentUpon>ClientTransactions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\RentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RentForm.Designer.cs">
+      <DependentUpon>RentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddNewMovie.cs">
       <SubType>Form</SubType>
@@ -128,6 +149,15 @@
     <Compile Include="Transactions.cs">
       <DependentUpon>Filmy.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\ReturnMovie.resx">
+      <DependentUpon>ReturnMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ClientTransactions.resx">
+      <DependentUpon>ClientTransactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RentForm.resx">
+      <DependentUpon>RentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\AddNewMovie.resx">
       <DependentUpon>AddNewMovie.cs</DependentUpon>
     </EmbeddedResource>
