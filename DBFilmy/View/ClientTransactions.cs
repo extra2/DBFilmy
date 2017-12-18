@@ -45,6 +45,7 @@ namespace DBFilmy.View
 
         public void ShowData()
         {
+            _dataGrid.Rows.Clear();
             using (filmyEntities entities = new filmyEntities())
             {
                 int id = Int32.Parse(_id);
@@ -55,6 +56,7 @@ namespace DBFilmy.View
                     row.Cells["ClientID"].Value = _view.ID_client;
                     row.Cells["Client"].Value = _view.Name + " " + _view.Surname;
                     row.Cells["Title"].Value = _view.Title;
+                    row.Cells["MovieID"].Value = _view.ID_Movie;
                     // is returned?
                     string isReturned = "";
                     if (_view.Is_Rented.Value == true) isReturned = "NIE";

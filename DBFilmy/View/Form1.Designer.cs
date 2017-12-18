@@ -41,7 +41,7 @@
             // 
             this.buttonAddNewClient.Location = new System.Drawing.Point(13, 13);
             this.buttonAddNewClient.Name = "buttonAddNewClient";
-            this.buttonAddNewClient.Size = new System.Drawing.Size(136, 23);
+            this.buttonAddNewClient.Size = new System.Drawing.Size(136, 53);
             this.buttonAddNewClient.TabIndex = 0;
             this.buttonAddNewClient.Text = "Dodaj Klienta";
             this.buttonAddNewClient.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             // 
             // buttonAddNewMovie
             // 
-            this.buttonAddNewMovie.Location = new System.Drawing.Point(15, 42);
+            this.buttonAddNewMovie.Location = new System.Drawing.Point(15, 72);
             this.buttonAddNewMovie.Name = "buttonAddNewMovie";
-            this.buttonAddNewMovie.Size = new System.Drawing.Size(134, 24);
+            this.buttonAddNewMovie.Size = new System.Drawing.Size(134, 54);
             this.buttonAddNewMovie.TabIndex = 1;
             this.buttonAddNewMovie.Text = "Dodaj nowy film do bazy";
             this.buttonAddNewMovie.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // buttonListOfMovies
             // 
-            this.buttonListOfMovies.Location = new System.Drawing.Point(15, 72);
+            this.buttonListOfMovies.Location = new System.Drawing.Point(161, 13);
             this.buttonListOfMovies.Name = "buttonListOfMovies";
-            this.buttonListOfMovies.Size = new System.Drawing.Size(134, 23);
+            this.buttonListOfMovies.Size = new System.Drawing.Size(134, 53);
             this.buttonListOfMovies.TabIndex = 2;
             this.buttonListOfMovies.Text = "Lista Filmów";
             this.buttonListOfMovies.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // buttonRent
             // 
-            this.buttonRent.Location = new System.Drawing.Point(12, 101);
+            this.buttonRent.Location = new System.Drawing.Point(304, 13);
             this.buttonRent.Name = "buttonRent";
-            this.buttonRent.Size = new System.Drawing.Size(149, 23);
+            this.buttonRent.Size = new System.Drawing.Size(146, 53);
             this.buttonRent.TabIndex = 3;
             this.buttonRent.Text = "Wypożyczenie filmu";
             this.buttonRent.UseVisualStyleBackColor = true;
@@ -79,18 +79,19 @@
             // 
             // buttonStats
             // 
-            this.buttonStats.Location = new System.Drawing.Point(15, 208);
+            this.buttonStats.Location = new System.Drawing.Point(161, 132);
             this.buttonStats.Name = "buttonStats";
-            this.buttonStats.Size = new System.Drawing.Size(163, 23);
+            this.buttonStats.Size = new System.Drawing.Size(134, 54);
             this.buttonStats.TabIndex = 4;
-            this.buttonStats.Text = "Statystyki -> todo funkcja";
+            this.buttonStats.Text = "Statystyki";
             this.buttonStats.UseVisualStyleBackColor = true;
+            this.buttonStats.Click += new System.EventHandler(this.buttonStats_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 130);
+            this.button1.Location = new System.Drawing.Point(304, 72);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 23);
+            this.button1.Size = new System.Drawing.Size(146, 54);
             this.button1.TabIndex = 5;
             this.button1.Text = "Zwrot filmu";
             this.button1.UseVisualStyleBackColor = true;
@@ -98,9 +99,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(15, 159);
+            this.button2.Location = new System.Drawing.Point(161, 72);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(146, 23);
+            this.button2.Size = new System.Drawing.Size(134, 54);
             this.button2.TabIndex = 6;
             this.button2.Text = "Transakcje";
             this.button2.UseVisualStyleBackColor = true;
@@ -110,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 268);
+            this.ClientSize = new System.Drawing.Size(464, 194);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonStats);

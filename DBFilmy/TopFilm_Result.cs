@@ -10,18 +10,10 @@
 namespace DBFilmy
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class MoviesRentedByAUser
+    public partial class TopFilm_Result
     {
-        public string Name { get; set; }
-        public string Surname { get; set; }
+        public Nullable<int> Count { get; set; }
         public string Title { get; set; }
-        public Nullable<bool> Is_Rented { get; set; }
-        public Nullable<System.DateTime> rental_date { get; set; }
-        public Nullable<int> Price { get; set; }
-        public Nullable<int> Penalty { get; set; }
-        public int ID_client { get; set; }
-        public int ID_Movie { get; set; }
     }
 }

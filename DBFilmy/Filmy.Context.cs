@@ -12,6 +12,8 @@ namespace DBFilmy
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class filmyEntities : DbContext
     {
@@ -30,5 +32,10 @@ namespace DBFilmy
         public virtual DbSet<Transactions> Transactions { get; set; }
         public virtual DbSet<Movie> Movie { get; set; }
         public virtual DbSet<MoviesRentedByAUser> MoviesRentedByAUser { get; set; }
+    
+        public virtual ObjectResult<TopFilm_Result> TopFilm()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<TopFilm_Result>("TopFilm");
+        }
     }
 }

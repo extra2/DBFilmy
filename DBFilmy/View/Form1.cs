@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,11 @@ namespace DBFilmy
         private void button2_Click(object sender, EventArgs e)
         {
             new ClientTransactions().Show();
+        }
+
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            new Statistics().Show();
         }
     }
 }
