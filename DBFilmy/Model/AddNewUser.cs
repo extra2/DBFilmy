@@ -28,7 +28,7 @@ namespace DBFilmy
                     return;
                 }
                 f.Client.Add(client);
-                f.SaveChangesAsync();
+                f.SaveChanges();
                 MessageBox.Show("Klient " + client.Name + " " + client.Surname + " dodany.\nNumer ID klienta: " + client.ID_client, "Klient dodany");
             }
         }
